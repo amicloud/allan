@@ -26,14 +26,14 @@ for (let allan of allans) {
     allan.on('message', function (user, userID, channelID, message, event) {
         console.log(`Message received: "${message}"`);
         console.log(channelID);
-        if (allan === allans[1]) {
-            if (userID !== allans[0].id) return;
-        }
-        if (userID === allan.id || userID === "510016054391734273") return;
         if (channelID === "538566527738445851") {
             if (message.match("RUINED IT AT")) {
                 throw(new DOMException("help"));
             }
+            if (allan === allans[1]) {
+                if (userID !== allans[0].id) return;
+            }
+            if (userID === allan.id || userID === "510016054391734273") return;
             console.log(`${allan.username} responding`);
             if (parseInt(message) < 1014) {
                 let t = setTimeout(() => {
