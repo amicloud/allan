@@ -1,7 +1,7 @@
 {
   "name": "Allan",
   "version": "1.0.0",
-  "dependencies": {
+  "dependencies":  {
     "discord.io": "github:woor/discord.io#gateway_v6"
   },
   "scripts": {

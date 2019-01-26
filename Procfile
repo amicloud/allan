@@ -1,1 +1,1 @@
-worker: npm run allan-please-count
+web: npm run allan-please-count
