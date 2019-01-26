@@ -1,1 +1,1 @@
-web: npm run allan-please-count
+allan: npm run allan-please-count
