@@ -1,0 +1,11 @@
+{
+  "name": "Allan",
+  "version": "1.0.0",
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6"
+  },
+  "scripts": {
+    "allan-please-count": "node allan.js",
+    "start": "npm allan-please-count"
+  }
+}
