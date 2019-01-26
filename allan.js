@@ -2,7 +2,7 @@
 
 const Discord = require('discord.io');
 
-let delay = 1000;
+let delay = 5000;
 
 let allan1 = new Discord.Client({
     token: "NTM4NTY3Njk3NzY4Nzc1Njgy.Dy1wYA.A-e4v16ne4W3mt8LJmrsbbsEvxE",
@@ -35,7 +35,7 @@ for (let allan of allans) {
                 throw(new DOMException("help"));
             }
             console.log(`${allan.username} responding`);
-            if (parseInt(message) < 1013) {
+            if (parseInt(message) < 1014) {
                 let t = setTimeout(() => {
                         let newMessage = `${parseInt(message) + 1}`;
                         console.log(`${allan.username} sending message ${newMessage}`);
