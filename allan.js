@@ -32,21 +32,24 @@ for (let allan of allans) {
     allan.on('message', function (user, userID, channelID, message, event) {
         if (countingChannels.includes(channelID)) {
             if (message.match("RUINED IT AT")) {
-                throw(new Error("Shit!"));
+                throw(new Error("allan please stop"));
             }
             if (allan === allans[1]) {
+                console.log(`Allan heard ${message}`);
                 if (userID !== allans[0].id) return;
             }
+            let newMessage = `${parseInt(message) + 1}`;
+            let _delay = getRandomInt(delay * 0.75, delay * 1.25);
+            let seconds = _delay / 1000;
+            console.log(`${allan.username} sending message ${newMessage} in ${seconds} seconds`);
             if (userID === allan.id || userID === "510016054391734273") return;
             if (parseInt(message) < parseInt(process.env.MAX)) {
                 let t = setTimeout(() => {
-                    let newMessage = `${parseInt(message) + 1}`;
-                    console.log(`${allan.username} sending message ${newMessage}`);
                     allan.sendMessage({
                         to: channelID,
                         message: newMessage
                     });
-                }, getRandomInt(delay * 0.75, delay * 1.25));
+                }, _delay);
                 timeouts.push(t);
             }
         }
