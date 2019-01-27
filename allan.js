@@ -16,7 +16,7 @@ let allan2 = new Discord.Client({
 let timeouts = [];
 let allans = [allan1, allan2];
 
-let channels =
+let countingChannels =
     ["538965173629747220", "538566527738445851", "538967327450988567",
         "538967346094669825", "538967361491959811", "538967379926056972",
         "538967392802570252", "538967408619290636", "538967464399339520",
@@ -30,7 +30,7 @@ for (let allan of allans) {
     });
 
     allan.on('message', function (user, userID, channelID, message, event) {
-        if (channels.includes(channelID)) {
+        if (countingChannels.includes(channelID)) {
             if (message.match("RUINED IT AT")) {
                 throw(new Error("Shit!"));
             }
@@ -44,13 +44,19 @@ for (let allan of allans) {
                     console.log(`${allan.username} sending message ${newMessage}`);
                     allan.sendMessage({
                         to: channelID,
-                        message: parseInt(message) + 1
+                        message: newMessage
                     });
-                }, delay);
+                }, getRandomInt(delay * 0.75, delay * 1.25));
                 timeouts.push(t);
             }
         }
     });
 }
+
+const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+};
 
 
