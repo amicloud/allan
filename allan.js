@@ -38,7 +38,7 @@ for (let allan of allans) {
                 if (userID !== allans[0].id) return;
             }
             if (userID === allan.id || userID === "510016054391734273") return;
-            if (parseInt(message) < parseInt(process.env.MAX) {
+            if (parseInt(message) < parseInt(process.env.MAX)) {
                 let t = setTimeout(() => {
                     let newMessage = `${parseInt(message) + 1}`;
                     console.log(`${allan.username} sending message ${newMessage}`);
