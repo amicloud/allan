@@ -2,7 +2,7 @@
 
 const Discord = require('discord.io');
 
-let delay = 3000;
+let delay = parseInt(process.env.DELAY);
 
 let allan1 = new Discord.Client({
     token: "NTM4NTY3Njk3NzY4Nzc1Njgy.Dy1wYA.A-e4v16ne4W3mt8LJmrsbbsEvxE",
