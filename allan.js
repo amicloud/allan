@@ -45,6 +45,7 @@ for (let allan of allans) {
             console.log(`${allan.username} sending message ${newMessage} in ${seconds} seconds`);
             if (userID === allan.id || userID === "510016054391734273" || userID === "199267380742979584") return;
             if (parseInt(message) < parseInt(process.env.MAX)) {
+                allan.simulateTyping(channelID);
                 let t = setTimeout(() => {
                     allan.sendMessage({
                         to: channelID,
