@@ -17,10 +17,7 @@ let timeouts = [];
 let allans = [allan1, allan2];
 
 let countingChannels =
-    ["538965173629747220", "538566527738445851", "538967327450988567",
-        "538967346094669825", "538967361491959811", "538967379926056972",
-        "538967392802570252", "538967408619290636", "538967464399339520",
-        "538967482996883476", "538967500982059054"];
+    ["538965173629747220", "539728592381149189"];
 
 for (let allan of allans) {
     console.log("allan please login");
@@ -30,7 +27,11 @@ for (let allan of allans) {
     });
 
     allan.on('message', function (user, userID, channelID, message, event) {
+      
         if (countingChannels.includes(channelID)) {
+            if(message === "allan please stop"){
+                throw(new Error("allan please stop"));
+            }
             if (message.match("RUINED IT AT")) {
                 throw(new Error("allan please stop"));
             }
